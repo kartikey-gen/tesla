@@ -1,0 +1,78 @@
+.headerblock {
+    background: url('https://tesla.com/ns_videos/model-3-social.jpg') no-repeat
+      center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+  }
+  .headerblock-info{
+    display: flex;
+    flex-direction: column;
+    height:360px;
+  }
+  .headerblock-infotext{
+    text-align: center;
+    flex:1;
+  }
+
+  .headerblock-infotext>h1{
+    color:#393c41;
+    font-weight: 500;
+    font-size: 38px;
+  }
+
+  .headerblock-infotext>h4{
+    font-weight: 400;
+    font-size: 15px;
+    color: #5c5e62;
+  }
+  .headblock-infotext > h4 > span {
+    padding-bottom: 4px;
+    padding-top: 15px;
+    border-bottom: 1px solid black;
+    color: #393c41;
+    cursor: pointer;
+  }
+  
+  .headblock-infotext > h4 > span:hover {
+    border-bottom-width: 2px;
+    color: black;
+  }
+  .headerblock-actions{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+  }
+  .headerblock-actions>button{
+    cursor: pointer;
+    border: none;
+    width: 260px;
+    padding: 12px 0px 12px 0px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    outline: none;
+  }
+  .headerblock-buttonprimary{
+    background-color:#5c5e62;
+    opacity: 0.9;
+    /* padding: 12px 50px 12px 50px;
+   border-radius: 5px; */
+   color: aliceblue;
+  }
+  .headerblock-buttonsecondary{
+    background-color:white;
+    /* padding: 12px 50px 12px 50px;
+   border-radius: 5px;
+    */
+    opacity: 0.8;
+   color:#5c5e62;
+  }
