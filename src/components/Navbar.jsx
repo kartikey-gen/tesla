@@ -5,8 +5,10 @@ import teslalogo from '../images/tesla.png'
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import Headerblock from './Headerblock';
+import Menu from './Menu';
 function Navbar({isSideMenu,setSideMenuOpen}) {
   return (
+    <>
     <div className='nav'>
         <div className='nav_logo'>
            <Link to='tesla.com'>
@@ -34,6 +36,9 @@ function Navbar({isSideMenu,setSideMenuOpen}) {
 
 
     </div>
+    <Headerblock/>
+    {isSideMenu&&<Menu/>}
+    </>
   )
 }
 

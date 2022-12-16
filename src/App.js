@@ -1,22 +1,20 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router,Routes } from 'react-router-dom';
+import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import { useState } from 'react';
-import Menu from './components/Menu';
-import Headerblock from './components/Headerblock';
+import Login from './components/Login';
 function App() {
   const [isSideMenu,setSideMenuOpen] = useState(false);
   return (
     <div className="App">
-      <Router>
       <>
-        {/* <p>Hello first!!!!!!!!!
-        </p> */}
-        <Navbar isSideMenu={isSideMenu} setSideMenuOpen={setSideMenuOpen}/>
-        <Headerblock/>
-        {isSideMenu&&<Menu/>}
-        </>
+      <Router>
+      <Routes>
+        <Route exact path='/' element={<Navbar isSideMenu={isSideMenu} setSideMenuOpen={setSideMenuOpen}/>}/>
+        <Route exact path='/login' element={<Login/>}/>
+        </Routes>
         </Router>
+        </>
     </div>
   );
 }

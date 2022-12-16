@@ -49,3 +49,7 @@
 .header_link--hidden{
     visibility: hidden;
 }
+.header_menu{
+    position: relative;
+    z-index: 2;
+}
