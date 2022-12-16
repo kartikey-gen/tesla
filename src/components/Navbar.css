@@ -41,7 +41,7 @@
     z-index: 0;
     position: relative;
 }
-.header_menu >.MuiSvgIcon-root{
+.header_menu >MuiSvgIcon-root{
    position: relative;
    z-index: 2;
    cursor: pointer;

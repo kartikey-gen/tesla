@@ -16,12 +16,12 @@ function Navbar({isSideMenu,setSideMenuOpen}) {
            </Link>
         </div>
         <div className='header_links'>
-            <Link to='/'>MODEL S</Link>
-            <Link to='/'>MODEL 3</Link>
-             <Link to='/'>MODEL X</Link>
-             <Link to='/'>MODEL Y</Link>
-             <Link to='/'>SOLAR PANEL</Link>
-             <Link to='/'>SOLAR ROOF</Link>
+            <Link to='/'className={isSideMenu&&'header_link--hidden'}>MODEL S</Link>
+            <Link to='/'className={isSideMenu&&'header_link--hidden'}>MODEL 3</Link>
+             <Link to='/'className={isSideMenu&&'header_link--hidden'}>MODEL X</Link>
+             <Link to='/'className={isSideMenu&&'header_link--hidden'}>MODEL Y</Link>
+             <Link to='/' className={isSideMenu&&'header_link--hidden'}>SOLAR PANEL</Link>
+             <Link to='/' className={isSideMenu&&'header_link--hidden'}>SOLAR ROOF</Link>
              </div>
         <div className='header_right'>
         <Link to='/' className={isSideMenu&&'header_link--hidden'}>Shop</Link>
