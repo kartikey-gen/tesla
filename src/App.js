@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <>
+      <h2>Hello</h2>
       <Router>
       <Routes>
         <Route exact path='/' element={<Navbar isSideMenu={isSideMenu} setSideMenuOpen={setSideMenuOpen}/>}/>
