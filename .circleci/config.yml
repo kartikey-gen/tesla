@@ -25,15 +25,15 @@ jobs:
       - node/install-packages
       - run:
           name: Install Firebase CLI
-          command: npm install -g firebase-tools
+          command: npm install firebase-tools
       - run:
           name: Authenticate Firebase CLI
           command: |
             echo "$FIREBASE_SERVICE_ACCOUNT_KEY" > $HOME/firebase-service-account.json
-            firebase use --add --token="$FIREBASE_SERVICE_ACCOUNT_KEY"
+            ./node_modules/.bin/firebase use --add --token="$FIREBASE_SERVICE_ACCOUNT_KEY"
       - run:
           name: Deploy to Firebase Hosting
-          command: firebase deploy --only hosting
+          command: ./node_modules/.bin/firebase deploy --only hosting
 
 workflows:
   sample:
