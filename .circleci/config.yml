@@ -1,20 +1,43 @@
 version: 2.1
 
-orbs: 
-    node: circleci/node@3.0.0
+orbs:
+  node: circleci/node@3.0.0
 
 jobs:
-    build:
-        docker:
-            - image: cimg/node:15.1
-        steps: 
-            - checkout
-            - node/install-packages
-            # - run:
-            #     name: Run tests
-            #     command: npm test
+  build:
+    docker:
+      - image: cimg/node:15.1
+    steps: 
+      - checkout
+      - node/install-packages
+      - run:
+          name: Build Project   
+          command: npm run build
+      # - run:
+      #     name: Run tests
+      #     command: npm test
+
+  deploy:
+    docker:
+      - image: cimg/node:15.1
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: Install Firebase CLI
+          command: npm install -g firebase-tools
+      - run:
+          name: Firebase Login
+          command: firebase login:ci --no-localhost --token $FIREBASE_TOKEN
+      - run:
+          name: Deploy to Firebase Hosting
+          command: firebase deploy --only hosting
 
 workflows:
-    sample:
-        jobs:
+  sample:
+    jobs:
+      - build
+      # Trigger the deploy job only when the build job is successful
+      - deploy:
+          requires:
             - build
