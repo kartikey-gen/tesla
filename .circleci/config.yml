@@ -24,14 +24,14 @@ jobs:
       - checkout
       - node/install-packages
       - run:
-          name: Install Firebase CLI
-          command: npm install -g firebase-tools
+          name: Install Firebase CLI Locally
+          command: npm install firebase-tools --save-dev
       - run:
           name: Firebase Login
-          command: firebase login:ci --no-localhost --token $FIREBASE_TOKEN
+          command: npx firebase login:ci --no-localhost --token $FIREBASE_TOKEN
       - run:
           name: Deploy to Firebase Hosting
-          command: firebase deploy --only hosting
+          command: npx firebase deploy --only hosting
 
 workflows:
   sample:
