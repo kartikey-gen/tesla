@@ -6,7 +6,7 @@ orbs:
 jobs:
     build:
         docker:
-            - image: circleci/node:{{circleci/node@3.0.0}} # Use the node orb with the specified version
+            - image: cimg/node:15.1
         steps: 
             - checkout
             - node/install-packages
