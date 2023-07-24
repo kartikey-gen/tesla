@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import { useState } from 'react';
 import Login from './components/Login';
-import {Provider, useSelector} from 'react-redux'
+import {useSelector} from 'react-redux'
 import {selectUser} from './userSlice'
 import {Navigate} from 'react-router-dom';
 import Signup from './components/Signup';

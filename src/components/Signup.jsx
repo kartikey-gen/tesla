@@ -1,18 +1,13 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import tesla from '../images/tesla.png'
 import './Signup.css'
 import LanguageIcon from '@mui/icons-material/Language';
 import ButtonPrimary from "./Features/ButtonPrimary";
 import ButtonSecondary from "./Features/ButtonSecondary"
-import { useDispatch } from 'react-redux';
 const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [fname, setFname] = useState("");
-    const [sname, setSname] = useState("");
-    const dispatch = useDispatch()
-    const history = useNavigate()
   return (
     <div className='signup'>
       <div className='signup-header'>
