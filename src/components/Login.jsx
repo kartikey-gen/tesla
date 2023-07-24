@@ -14,6 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch()
   const history = useNavigate()
+  console.log('hello');
   const signIn = (e) => {
     e.preventDefault()
 
