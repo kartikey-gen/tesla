@@ -7,7 +7,7 @@ orbs:
 
 jobs:   # This is where we define our actual process, each process is classified into a job. we can run multiple jobs
 # Each job should have a name, you can call it whatever you like
-    test-code:
+    # test-code:
     # Executor, we must define one, you can use circle-ci's docker executors or your own custom docker executors
     docker:
       - image: cimg/node:15.1
