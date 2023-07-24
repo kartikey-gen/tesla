@@ -1,0 +1,31 @@
+# You must choose a version of circle ci you want to use, all config files requires this
+version: 2.1
+
+# You can use already packaged circle ci workflows, they are called orbs
+orbs: 
+    node:  circleci/node@4.1 # We use the orbs for creating a node js workflow
+
+jobs:   # This is where we define our actual process, each process is classified into a job. we can run multiple jobs
+# Each job should have a name, you can call it whatever you like
+    test-code:
+    # Executor, we must define one, you can use circle-ci's docker executors or your own custom docker executors
+    docker:
+      - image: cimg/node:15.1
+     # next we define the steps involved in creating the workflow
+     steps: 
+        # Checkout the code as the first step. move our code to the host machine
+      - checkout
+        # Install our dependencies with npm, we can use circleci to cache dependencies them for future use
+      - node/install-packages
+        # We specify commands to run, each command has a name and the actual terminal command like below
+      - run:
+          name: Run tests
+          command: npm test
+
+workflows:
+  # Below is the definition of your workflow.
+  # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the test-my-code job above.
+  # CircleCI will run this workflow on every commit.
+  sample: 
+    jobs:
+      - test-code
